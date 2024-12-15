@@ -1,0 +1,145 @@
+body {
+    background-color: rgba(111, 110, 110, 0.245);
+}
+
+.movies-list {
+    min-height: 100vh;
+    padding: 20px 20px 20px 20px;
+
+    .search-section {
+        margin-bottom: 30px;
+        text-align: center;
+
+        button {
+            margin-top: 10px;
+        }
+    }
+
+    .movie-container {
+        display: flex;
+        flex-direction: row;
+        gap: 5;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .movie-card {
+        // background: #fff;
+        border-radius: 10px;
+        max-width: 18%;
+        padding-top: 20px;
+        min-width: 18%;
+        background: linear-gradient(90deg, rgba(25, 161, 190, 0.5), rgba(125, 65, 146, 0.5));
+
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: 1200px) {
+            max-width: 40%;
+            min-width: 40%;
+        }
+
+        /* Daha küçük cihazlar (mobil) */
+        @media (max-width: 576px) {
+            max-width: 80%;
+            min-width: 80%;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+            .movie-poster {
+                transform: scale(1.1);
+            }
+        }
+
+        .movie-poster {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 2 / 3;
+        }
+
+        .movie-details {
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+
+    }
+
+}
+
+.header-title {
+    background: linear-gradient(90deg, #19A1BE, #7D4192);
+    /* Gradient renk geçişi */
+    background-clip: text;
+    /* Standard property for modern browsers */
+    -webkit-background-clip: text;
+    /* Vendor-prefixed for older WebKit browsers */
+    -webkit-text-fill-color: transparent;
+    /* Webkit-specific to make text transparent */
+    color: transparent;
+    /* Fallback for non-webkit browsers */
+    font-size: 32px;
+    /* Yazı boyutu */
+    font-weight: bold;
+    /* Kalın yazı */
+    text-align: center;
+    /* Metni ortala */
+}
+
+.movie-details h6 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+
+    .back-page-button {
+        width: 40px;
+        height: 40px;
+        // background-color: black;
+
+        background: linear-gradient(90deg, rgba(25, 161, 190, 1), rgba(125, 65, 146, 1));
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+    }
+
+    .pagination-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .next-page-button {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(90deg, rgba(25, 161, 190, 1), rgba(125, 65, 146, 1));
+        margin-left: 10px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

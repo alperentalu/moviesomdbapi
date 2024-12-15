@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# Movie Detail App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that allows users to browse a list of movies and view detailed information about each movie. The application uses React Query for fetching data from the OMDB API and manages state using React Context. Users can navigate seamlessly between pages, with movie details displayed in a clean and responsive design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Movie List**: Displays a list of movies with the ability to click and view details.
+- **Global State Management**: Uses React Context to store and access the selected movie's `imdbID`.
+- **Query Parameters**: Supports passing `imdbID` via query parameters for direct URL access.
+- **OMDB API Integration**: Fetches movie details dynamically using the OMDB API.
+- **Pagination**: Enables users to navigate through multiple pages of movies.
+- **Responsive Design**: Ensures a clean and functional interface across devices.
+- **Home Navigation**: A home icon for quick return to the movie list.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React**: Core library for building the application.
+- **React Query**: For efficient server state management.
+- **React Router**: For client-side routing and navigation.
+- **TypeScript**: For type-safe development.
+- **Sass (SCSS)**: For responsive and modular styling.
+- **Axios**: For API requests.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## How to Run the Project
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/alperentalu/moviesomdbapi.git
+   cd moviesomdbapi
+2. Install dependencies::
+  npm install
+3. Set up your OMDB API key:
+  VITE_OMDB_API_KEY=your_api_key
+4. Run the application:
+  npm run dev
+5. Open your browser and navigate to
+  http://localhost:5173
+
+## Folder Structure
+
+  src/
+├── pages/
+│   ├── MovieDetail.tsx
+│   └── MovieList.tsx
+├── hooks/
+│   ├── useMovieDetail.ts
+│   └── useMovies.ts
+├── store/
+│   ├── movieSlice.ts
+│   └── store.ts
+├── context/
+│   └── MovieContext.tsx
+├── styles/
+│   └── MoviesList.scss
+├── App.tsx
+├── index.tsx
+└── main.tsx
